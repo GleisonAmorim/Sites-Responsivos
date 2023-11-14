@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Responsivo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha384-+UzPrPqDk3FcXzU1uq6R3SInp8PqOz2FX4DECD5i2z2zB7IOcgjgkyq8QzWXXid2" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="menu-btn" onclick="toggleMenu()">&#9776;</div>
+    <div class="menu">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Produtos</a></li>
+                <li><a href="history.html">Nossa História</a></li>
+                <li><a href="contact.html">Contato</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <main onclick="closeMenu()" class="main-content">
+        <h1>
+            <p>Conteúdo Principal
+        </h1>
+        </p>
+        <p>Aqui vai o conteúdo principal do seu site.</p>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://www.instagram.com/seuinstagram" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="mailto:seuemail@dominio.com"><i class="far fa-envelope"></i></a>
+            <a href="https://wa.me/seu_numerodetelefone" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.querySelector('.menu');
+            menu.classList.toggle('active');
+
+            var mainContent = document.querySelector('.main-content');
+            mainContent.classList.toggle('main-shift');
+        }
+
+        function closeMenu() {
+            var menu = document.querySelector('.menu');
+            if (menu.classList.contains('active')) {
+                menu.classList.remove('active');
+
+                var mainContent = document.querySelector('.main-content');
+                mainContent.classList.remove('main-shift');
+            }
+        }
+    </script>
+</body>
+
+</html>
